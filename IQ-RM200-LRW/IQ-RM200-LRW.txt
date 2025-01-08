@@ -69,10 +69,23 @@
     "Type" : "Config",
     "Config" : [{
         "Param" : "channel2Control",
-        "Value" : 1
+        "Value" : 0
     }]
 }
 
+8. To set relay 1 OFF and relay 2 ON
+
+{
+    "fPort" : 50,
+    "Type" : "Config",
+    "Config" : [{
+        "Param" : "channel1Control",
+        "Value" : 0
+    }, {
+        "Param" : "channel2Control",
+        "Value" : 1
+    }]
+}
 
 9. To reset button override of channel 1
 

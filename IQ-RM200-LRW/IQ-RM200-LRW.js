@@ -50,7 +50,7 @@ var UPLINK = {
         FPORT    : 11,
     },
     // parameter data
-    PARAMTER_DATA : {
+    PARAMETER_DATA : {
         CHANNEL  : 255, // 0xFF
         FPORT    : 100,
     },
@@ -321,7 +321,7 @@ function decodeParameterData(bytes)
         channel = bytes[index];
         index = index + 1;
         // Channel checking
-        if(channel != UPLINK.PARAMTER_DATA.CHANNEL){
+        if(channel != UPLINK.PARAMETER_DATA.CHANNEL){
             channel = "0x" + byteToEvenHEX(channel);
             index = " at index " + (index - 1);
             decoded[UPLINK.ERROR_NAME] = UPLINK.ERRORS.CHANNEL + channel + index;
@@ -522,7 +522,7 @@ function Decode(fPort, bytes, variables)
         decoded = decodeDeviceData(bytes);
     }else if(fPort == UPLINK.ALARM_DATA.FPORT){
         decoded = decodeAlarmData(bytes);
-    }else if(fPort == UPLINK.PARAMTER_DATA.FPORT){
+    }else if(fPort == UPLINK.PARAMETER_DATA.FPORT){
         decoded = decodeParameterData(bytes);
     }else{
         decoded.fPort = fPort;
@@ -612,7 +612,7 @@ var DEVICE = {
         "externalPowerStatus": {TYPE: 107, /* 0x6B */ RW:"R",},
         "batteryVoltage": {TYPE: 108, /* 0x6C */ RW:"R",},
         "batteryPercentage": {TYPE: 109, /* 0x6D */ RW:"R",},
-        "rebootDevice": {TYPE: 111, /* 0x6F */ SIZE: 1, MIN: 1, MAX: 1, RW:"WRITE_ONLY",},
+        "rebootDevice": {TYPE: 111, /* 0x6F */ SIZE: 1, MIN: 1, MAX: 1, RW:"W",},
         "internalCircuitTemperatureAlarm": {TYPE: 120, /* 0x78 */ RW:"R",},
         "internalCircuitTemperatureNumberOfAlarms": {TYPE: 121, /* 0x79 */ RW:"R",},
         "internalCircuitTemperature": {TYPE: 122, /* 0x7A */ RW:"R",},
