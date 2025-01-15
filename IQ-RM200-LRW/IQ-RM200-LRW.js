@@ -15,7 +15,7 @@
  * @copyright   YOBIIQ B.V. | https://www.yobiiq.com
  * 
  * @release     2024-01-11
- * @update      2024-12-11
+ * @update      2025-01-15
  * 
  * @product     P1002003 iQ RM200 (iQ Digital Controller)
  * 
@@ -628,9 +628,9 @@ var DEVICE = {
         "restartLoRaWAN": {TYPE: 162, /* 0xA2 */ SIZE: 1, MIN: 1, MAX: 1, RW:"W",},
         "radioMode": {TYPE: 163, /* 0xA3 */ SIZE: 1, MIN: 0, MAX: 2, RW:"RW",},
         "numberOfJoinAttempts": {TYPE: 164, /* 0xA4 */ SIZE: 1, MIN: 0, MAX: 255, RW:"RW",},
-        "linkCheckTimeframe": {TYPE: 164, /* 0xA5 */ SIZE: 2, MIN: 1, MAX: 65535, RW:"RW",},
-        "dataRetransmission": {TYPE: 165, /* 0xA6 */ SIZE: 1, MIN: 0, MAX: 1, RW:"RW",},
-        "lorawanWatchdogAlarm": {TYPE: 166, /* 0xA7 */ SIZE: 1, MIN: 0, MAX: 1, RW:"R",},
+        "linkCheckTimeframe": {TYPE: 165, /* 0xA5 */ SIZE: 2, MIN: 1, MAX: 65535, RW:"RW",},
+        "dataRetransmission": {TYPE: 166, /* 0xA6 */ SIZE: 1, MIN: 0, MAX: 1, RW:"RW",},
+        "lorawanWatchdogAlarm": {TYPE: 167, /* 0xA7 */ SIZE: 1, MIN: 0, MAX: 1, RW:"R",},
 
         /* specific registers */
         "channel1State": {TYPE: 26, /* 0x1A */ RW:"R",},
