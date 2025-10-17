@@ -1,0 +1,43 @@
+Please the downlink should be sent over the fPort present in the JSON command
+
+
+1. To configure the key (HEX format) and activate the decryption
+{
+    "fPort": 50,
+    "Type": "Config",
+    "Config": [{
+        "Param": "decryptionFunction",
+        "Value": 1
+    }, {
+        "Param": "decryptionKey",
+        "Value": "00112233445566778899aabbccddeeff"
+    }]
+}
+
+2. To configure periodic package on fPort 2 (Registers = list of register)
+
+{
+    "fPort" : 2,
+    "Type": "Periodic",
+    "Periodic": {
+        "UplinkInterval": 15,
+        "Mode": 1,
+        "Status": 1,
+        "Registers": ["internalCircuitTemperature", "internalCircuitHumidity"]
+    }
+}
+
+3. To configure threshold register
+
+{
+    "fPort" : 11,
+    "Type": "Threshold",
+    "Threshold": {
+        "Register": "voltageL1",
+        "Operation": ["MIN", "MAX"],
+        "MinThreshold": 220,
+        "MaxThreshold": 250,
+        "LogInterval": 15,
+        "UplinkInterval": 0,
+    }
+}
